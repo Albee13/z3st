@@ -57,7 +57,7 @@ x_s, sigma_yy = average_section(x_s, y_s, z_s, s["yy"], y_target, z_target, mask
 # Analytical results
 T_ref = analytic_T(x_T)
 sigma_th_ref = sigma_th(x_T, T_ref, c=1.0)
-max_sigma_T = np.max(sigma_th_ref)
+max_sigma_T = np.max(sigma_yy)
 
 # Plot
 plotter_sigma_temperature_slab(

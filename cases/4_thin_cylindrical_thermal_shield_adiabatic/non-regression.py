@@ -120,7 +120,7 @@ r_s, sigma_rr, sigma_tt, sigma_zz = extract_cylindrical_stresses(
 sigma_th_ref = sigma_th(r_T, T, c=1.0)
 T_ref = analytic_T(r_T)
 sigma_rr_ana_th, sigma_tt_ana_th, sigma_zz_ana_th = analytical_thermal_stress(r_s)
-max_sigma_T = np.max(sigma_tt_ana_th)
+max_sigma_T = np.max(sigma_tt)
 
 # map
 print(f"Ro/Ri = {Ro/Ri:.2f}")

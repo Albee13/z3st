@@ -12,70 +12,42 @@ Lx = 0.100; // (m)
 Ly = 2.000; // (m)
 Lz = 2.000; // (m)
 
-n = 40; // Number of divisions per Lx/y/z
+n = 30; // Number of divisions per Lx/y/z
 
 // Corner points
 Point(1) = {0, 0, 0, 1.0};
 Point(2) = {Lx, 0, 0, 1.0};
 Point(3) = {Lx, Ly, 0, 1.0};
 Point(4) = {0, Ly, 0, 1.0};
-Point(5) = {0, 0, Lz, 1.0};
-Point(6) = {Lx, 0, Lz, 1.0};
-Point(7) = {Lx, Ly, Lz, 1.0};
-Point(8) = {0, Ly, Lz, 1.0};
 
 // Edges
 Line(1) = {1, 2};
 Line(2) = {2, 3};
 Line(3) = {3, 4};
 Line(4) = {4, 1};
-Line(5) = {1, 5};
-Line(6) = {2, 6};
-Line(7) = {3, 7};
-Line(8) = {4, 8};
-Line(9) = {5, 6};
-Line(10) = {6, 7};
-Line(11) = {7, 8};
-Line(12) = {8, 5};
 
 // Faces
-Line Loop(1) = {1, 2, 3, 4};
-Plane Surface(1) = {1};
-
-Line Loop(2) = {5, 9, -6, -1};
-Plane Surface(2) = {2};
-
-Line Loop(3) = {6, 10, -7, -2};
-Plane Surface(3) = {3};
-
-Line Loop(4) = {7, 11, -8, -3};
-Plane Surface(4) = {4};
-
-Line Loop(5) = {8, 12, -5, -4};
-Plane Surface(5) = {5};
-
-Line Loop(6) = {9, 10, 11, 12};
-Plane Surface(6) = {6};
-
-// Define cube volume
-Surface Loop(1) = {1, 2, 3, 4, 5, 6};
-Volume(1) = {1};
+Line Loop(10) = {1, 2, 3, 4};
+Plane Surface(10) = {10};
 
 // Transfinite structure
-Transfinite Curve {1, 2, 3, 4, 9, 10, 11, 12} = n Using Progression 1;
-Transfinite Curve {5, 6, 7, 8} = n Using Progression 1;
-Transfinite Surface {1, 2, 3, 4, 5, 6};
-Recombine Surface {1, 2, 3, 4, 5, 6};
-Transfinite Volume {1};
+Transfinite Curve {1} = n Using Progression 1.1;
+Transfinite Curve {-3} = n Using Progression 1.1;
+Transfinite Curve {2, 4} = n Using Progression 1;
+Transfinite Surface {10};
+Recombine Surface {10};
+
+// Extrude
+out[] = Extrude {0, 0, Lz} {  Surface{10}; Layers{n}; Recombine; };
 
 // Physical groups for boundary conditions
-Physical Surface("zmin") = {1};
-Physical Surface("ymin") = {2};
-Physical Surface("xmax") = {3};
-Physical Surface("ymax") = {4};
-Physical Surface("xmin") = {5};
-Physical Surface("zmax") = {6};
-Physical Volume("steel") = {1};
+Physical Surface("zmin") = {10};        
+Physical Surface("zmax") = {out[0]};    
+Physical Surface("ymin") = {out[2]};    // y = 0
+Physical Surface("xmax") = {out[3]};    // x = Lx
+Physical Surface("ymax") = {out[4]};    // y = Ly
+Physical Surface("xmin") = {out[5]};    // x = 0
+Physical Volume("steel") = {out[1]};
 
 // Generate structured mesh
 Mesh.RecombineAll = 1;
