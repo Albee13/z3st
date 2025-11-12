@@ -1,0 +1,16 @@
+# austenitic_steel (inox, es. AISI 304/316)
+
+name: austenitic_steel
+
+E: 1.93e11
+nu: 0.30
+
+k: 16.0
+T_ref: 300.0
+alpha: 1.6e-5
+
+cp: 500.0
+rho: 8000.0
+
+mu_gamma: 25.0
+gamma_heating: 0.0

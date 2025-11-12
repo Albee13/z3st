@@ -1,0 +1,10 @@
+name: spherical_shell
+geometry_type: sphere
+
+Ri: 2.000
+Ro: 2.500
+
+labels:
+  outer: 1
+  inner: 2
+  mat0: 3

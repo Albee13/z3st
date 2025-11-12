@@ -1,0 +1,20 @@
+name: box_with_cavity
+geometry_type: rect
+
+Lx: 1.0            # box length in x (m)
+Ly: 1.0            # box length in y (m)
+Lz: 1.0            # box length in z (m)
+
+ax: 0.04           # semi-axis of ellipsoid in x (m)
+ay: 0.04           # semi-axis of ellipsoid in y (m)
+az: 0.04           # semi-axis of ellipsoid in z (m)
+
+labels:
+  cavity: 2
+  xmin: 3
+  xmax: 8
+  ymin: 4
+  ymax: 6
+  zmin: 7
+  zmax: 5
+  solid: 1

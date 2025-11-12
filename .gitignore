@@ -1,0 +1,33 @@
+# --.. ..- .-.. .-.. --- --.. ..- .-.. .-.. --- --.. ..- .-.. .-.. ---
+# Z3ST: A FEniCSx framework for thermo-mechanical analysis
+# Author: Giovanni Zullo
+# Version: 0.1.0 (2025)
+# --.. ..- .-.. .-.. --- --.. ..- .-.. .-.. --- --.. ..- .-.. .-.. ---
+
+# --. IDE / editor files --..
+.vscode/
+
+# --. Python --..
+__pycache__/
+z3st.egg-info
+
+# --. Sphinx documentation --..
+build/
+
+# --. Batch and temporary scripts --..
+ba_*
+
+# --. Log and JSON files --..
+log.*
+*.log
+non-regression.json
+
+# --. Data / results / figures --..
+*.csv
+*.png
+
+# --. Mesh and simulation outputs --..
+*.msh
+*.h5
+*.xdmf
+*.vtu

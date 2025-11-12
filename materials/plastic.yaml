@@ -1,0 +1,32 @@
+name: HDPE
+type: structural
+fissile: False
+
+# constitutive: voigt
+# C_matrix can be omitted, the code creates:
+# C_matrix:
+#   - [2.70e11, 1.10e11, 1.00e11, 0.0,    0.0,    0.0   ]
+#   - [1.10e11, 2.60e11, 1.05e11, 0.0,    0.0,    0.0   ]
+#   - [1.00e11, 1.05e11, 2.50e11, 0.0,    0.0,    0.0   ]
+#   - [0.0,     0.0,     0.0,     1.60e11,0.0,    0.0   ]   # yz
+#   - [0.0,     0.0,     0.0,     0.0,    1.55e11,0.0   ]   # xz
+#   - [0.0,     0.0,     0.0,     0.0,    0.0,    1.50e11]  # xy
+# ordered as: [xx, yy, zz, yz, xz, xy]
+
+# Mechanical properties
+E: 8.0e8           # Young's modulus (Pa)
+nu: 0.45           # Poisson's ratio (-)
+sigma_y: 2.5e6     # Yield stress (Pa)
+plastic: true      # Plastic behaviour (elasto-perfectly plastic)
+
+# Thermal properties
+k: 0.45            # Thermal conductivity (W/m·K)
+cp: 2300           # Specific heat capacity (J/kg·K)
+alpha: 1.8e-4      # Thermal expansion coefficient (1/K)
+T_ref: 300         # Reference temperature (K)
+
+# Physical properties
+rho: 950           # Density (kg/m³)
+
+mu_gamma: 0.0           # Negligible gamma attenuation
+gamma_heating: 0.0      # No gamma heating

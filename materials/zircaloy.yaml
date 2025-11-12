@@ -1,0 +1,18 @@
+name: zircaloy-4
+
+# Mechanical properties
+E: 99.3e9     # Young's modulus (Pa)
+nu: 0.37      # Poisson's ratio (-)
+
+# Thermal properties
+k: 17.0       # Thermal conductivity (W/m·K)
+alpha: 7.5e-6   # Thermal expansion coefficient (1/K)
+cp: 350       # Specific heat capacity (J/kg·K)
+T_ref: 300        # (K)
+
+# Physical properties
+rho: 6500         # Density (kg/m³)
+melting_temperature: 2123  # (K)
+
+mu_gamma: 24          # Linear attenuation coefficient / macroscopic cross section of gamma rays in steels (1/m)
+gamma_heating: 0.0    # Volumetric source due to gamma heating (W/m³)

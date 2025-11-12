@@ -1,0 +1,15 @@
+# martensitic_steel (inox, es. AISI 410/420 o 12Cr)
+name: martensitic_steel
+
+E: 2.00e11
+nu: 0.27
+
+k: 24.0
+alpha: 1.05e-5
+T_ref: 300.0
+
+cp: 460.0
+rho: 7700.0
+
+mu_gamma: 25.0
+gamma_heating: 0.0
