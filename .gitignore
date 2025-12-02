@@ -31,3 +31,6 @@ non-regression.json
 *.h5
 *.xdmf
 *.vtu
+
+# --. DS_Store
+.DS-Store
