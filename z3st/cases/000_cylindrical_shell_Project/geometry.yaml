@@ -1,8 +1,10 @@
 name: cylindrical_shell
 geometry_type: cyl
 
-Ri: 0.02 # Inner radius (m)
-Ro: 0.03 # Outer radius (m)
+## Raggio interno 1.5m, thickness di partenza 10cm
+
+Ri: 1.5 # Inner radius (m)
+Ro: 1.6 # Outer radius (m)
 Lz: 0.01 # Height (m)
 
 labels:
