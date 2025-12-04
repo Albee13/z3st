@@ -2,7 +2,7 @@ thermal_bcs:
   steel:
     - type: Dirichlet
       region: inner_radius
-      temperature: 300 # (K)
+      temperature: 487 # (K)
       
 mechanical_bcs:
   steel:
@@ -12,8 +12,8 @@ mechanical_bcs:
     
     - type: Neumann
       region: inner_radius
-      traction: -1.0e+6 # (Pa)
+      traction: -8.25e+6 # (Pa)
     
     - type: Neumann
       region: outer_radius
-      traction: 0.0 # (Pa)
+      traction: 7.5e+6 # (Pa)
