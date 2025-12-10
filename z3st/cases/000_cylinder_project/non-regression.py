@@ -25,8 +25,8 @@ OUT_JSON = os.path.join(CASE_DIR, "output", "non-regression.json")
 
 # Geometry and material
 Ri, Ro, Lz = 0.02, 0.03, 0.01         # m          inner and outer radius, height
-Pi, Po = 1.0e6, 0.0                   # Pa         internal and external pressure
-E, nu = 2.0e11, 0.3                   # Pa, -      Young modulus, Poisson ratio
+Pi, Po = 8.25e6, 7.5e6                   # Pa         internal and external pressure
+E, nu = 1.77e11, 0.3                   # Pa, -      Young modulus, Poisson ratio
 t = Ro - Ri                           # m          wall thickness
 slenderness = Ri / t                  # -          slenderness ratio
 z_target, z_tol = Lz/2, 0.01          # m          z-plane for data extraction
